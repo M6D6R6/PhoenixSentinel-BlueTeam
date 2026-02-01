@@ -1,4 +1,3 @@
-
 **DISCLAIMER – LEGAL NOTICE**  
 <span style="color:red; font-weight:bold; border: 2px solid red; padding: 12px; display: block; text-align: center; margin: 10px 0;">
 This tool is a proof-of-concept for **educational and authorized research purposes only**.  
@@ -28,7 +27,6 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 **For authorized research and Blue Team operations only.**  
 **DO NOT** use on unauthorized systems.
 
-## One-Click Setup & Run
-Copy and paste this block into your terminal:
+## Installation
 ```bash
-git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git && cd PhoenixSentinel-BlueTeam && pip install -r requirements.txt && python main.py
+pip install -r requirements.txt
