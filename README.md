@@ -1,10 +1,8 @@
 **DISCLAIMER – LEGAL NOTICE**  
-<span style="color:red; font-weight:bold; border: 2px solid red; padding: 12px; display: block; text-align: center; margin: 10px 0;">
-This tool is a proof-of-concept for **educational and authorized research purposes only**.  
-It is designed for use in controlled lab environments or with **explicit written permission (RoE)** during authorized penetration testing.  
-**DO NOT** use this tool on any system or network without proper authorization.  
-The author is not responsible for any misuse or damage resulting from the use of this tool.
-</span>
+🔴 **This tool is a proof-of-concept for educational and authorized research purposes only.**  
+🔴 It is designed for use in controlled lab environments or with **explicit written permission (RoE)** during authorized penetration testing.  
+🔴 **DO NOT** use this tool on any system or network without proper authorization.  
+🔴 The author is not responsible for any misuse or damage resulting from the use of this tool.
 
 <p align="center">
   <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam Banner" width="500"/>
