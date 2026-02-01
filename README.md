@@ -29,7 +29,7 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 
 **Download & Run – Copy this entire block and paste into your terminal**
 ```bash
-# 1. Scarica il progetto
+# 1. Download the project
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
 
 # 2. Enter the project folder
