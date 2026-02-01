@@ -27,19 +27,20 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 **For authorized research and Blue Team operations only.**  
 **DO NOT** use on unauthorized systems.
 
-## One-Click Setup & Run
-Copy and paste this entire block into your terminal to clone, install, and run the tool in one go:
-`bash
-# 1. Clone the repository 
+**Download & Run – Copy this entire block and paste into your terminal**
+```bash
+# 1. Scarica il progetto
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
-``bash
-# 2. Enter the project directory 
+
+# 2. Entra nella cartella del progetto
 cd PhoenixSentinel-BlueTeam
-``
-# 3. Instll dependencies 
+
+# 3. Installa tutte le librerie necessarie
 pip install -r requirements.txt
 
-# 4. Run the tool 
+# 4. Avvia il programma (con menu interattivo)
 python main.py
+
+
 
 
