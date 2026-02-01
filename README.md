@@ -30,3 +30,10 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 ## Installation
 ```bash
 pip install -r requirements.txt
+
+## Download the Tool
+git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
+cd PhoenixSentinel-BlueTeam
+
+## Run the Tool
+python main.py
