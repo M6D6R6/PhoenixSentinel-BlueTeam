@@ -29,17 +29,17 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 
 ## One-Click Setup & Run
 Copy and paste this entire block into your terminal to clone, install, and run the tool in one go:
-```bash
-# 1. Clone the repository (scarica il progetto)
+`bash
+# 1. Clone the repository 
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
-
-# 2. Enter the project directory (entra nella cartella)
+``bash
+# 2. Enter the project directory 
 cd PhoenixSentinel-BlueTeam
-
-# 3. Install dependencies (installa tutte le librerie necessarie)
+``
+# 3. Instll dependencies 
 pip install -r requirements.txt
 
-# 4. Run the tool (avvia con menu interattivo)
+# 4. Run the tool 
 python main.py
 
 
