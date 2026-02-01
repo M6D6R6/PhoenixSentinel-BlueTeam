@@ -6,17 +6,26 @@ It is designed for use in controlled lab environments or with **explicit written
 The author is not responsible for any misuse or damage resulting from the use of this tool.
 </span>
 
-# ThanosReaper-RedTeam
+<p align="center">
+  <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam Banner" width="500"/>
+</p>
 
-Advanced Red Team Vuln Harvester and Evasion Tool – "I am inevitable."
+# PhoenixSentinel-BlueTeam
 
-Features:
-- LWE: post-quantum obfuscation for payload hiding
-- GNN: optimizes vuln paths (NP-hard attack chain simulation)
-- Chain simulation: enumeration + obfuscation + injection toy
+Advanced intrusion detection system (IDS) based on artificial intelligence for the Blue Team.
 
-For authorized research and red team operations only.
-DO NOT use on unauthorized systems.
+**What it is and what it does**  
+PhoenixSentinel-BlueTeam is an AI-powered Intrusion Detection System (IDS) for the Blue Team (defense).  
+
+It analyzes log files (system logs, network traffic, SIEM exports) to:
+- Simulate adversarial threats using GAN (to train and test defenses against AI-generated attacks).
+- Predict anomalies over time using LSTM (forecasting to anticipate threats).
+- Isolate suspicious activity using K-Means clustering + NP-hard graph simulation (to mimic quarantine/containment).
+
+Real-world use: anomaly detection in SOC environments, SIEM data monitoring, proactive network defense.
+
+**For authorized research and Blue Team operations only.**  
+**DO NOT** use on unauthorized systems.
 
 **Download & Run – Copy this entire block and paste into your terminal**
 ```bash
