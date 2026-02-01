@@ -32,13 +32,13 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 # 1. Scarica il progetto
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
 
-# 2. Entra nella cartella del progetto
+# 2. Enter the project folder
 cd PhoenixSentinel-BlueTeam
 
-# 3. Installa tutte le librerie necessarie
+# 3. Install all necessary libraries
 pip install -r requirements.txt
 
-# 4. Avvia il programma (con menu interattivo)
+# 4. Start the program 
 python main.py
 
 
