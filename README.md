@@ -28,10 +28,12 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 **DO NOT** use on unauthorized systems.
 
 ## One-Click Setup & Run
-Copy and paste this entire block into your terminal to clone, install, and run the tool in one go:
-```bash
-git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git && \
-cd PhoenixSentinel-BlueTeam && \
-pip install -r requirements.txt && \
-python main.py
 
+Clone the repository
+git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
+
+Enter the project directory
+pip install -r requirements.txt
+
+Run the tool
+python main.py
