@@ -1,3 +1,9 @@
+**DISCLAIMER – LEGAL NOTICE**  
+This tool is a proof-of-concept for educational and authorized research purposes only.  
+It is designed for use in controlled lab environments or with explicit written permission (RoE) during authorized penetration testing.  
+DO NOT use this tool on any system or network without proper authorization.  
+The author is not responsible for any misuse or damage resulting from the use of this tool.
+
 <p align="center">
   <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam Banner" width="500"/>
 </p>
