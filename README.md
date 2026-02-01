@@ -28,14 +28,14 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 **DO NOT** use on unauthorized systems.
 
 ## Setup & Run
-`bash
+```bash
 Clone the repository
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
 
-`bash
+```
 Enter the project directory
 pip install -r requirements.txt
 
-`bash
+``
 Run the tool
 python main.py
