@@ -1,4 +1,6 @@
-﻿# PhoenixSentinel-BlueTeam
+![PhoenixSentinel-BlueTeam](PhoenixSentinel-BlueTeam.jpg)
+ 
+ # PhoenixSentinel-BlueTeam
 
 Advanced intrusion detection system (IDS) based on artificial intelligence for the Blue Team.
 
