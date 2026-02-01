@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 import torch
 import torch.nn as nn
+import argparse
 import sys
 import os
 
@@ -101,25 +102,26 @@ def isolate_anomaly(data):
     outliers = np.argsort(distances)[-3:]
     return outliers
 
-def analyze_log(logfile):
-    if not os.path.isfile(logfile):
-        print(f"Error: File '{logfile}' not found. Please provide a valid log file with numerical data (e.g. 10 columns).")
-        return
+def analyze_data(data):
+    fake, g_loss = train_gan(data)
+    forecast = lstm_forecast(data)
+    outliers = isolate_anomaly(data)
 
-    print(f"Analyzing log file: {logfile}")
-    try:
-        data = np.loadtxt(logfile)[:100, :10]  # Load first 100 rows, 10 columns
-        fake, g_loss = train_gan(data)
-        forecast = lstm_forecast(data)
-        outliers = isolate_anomaly(data)
+    print("\nFake threat vector (GAN generated):")
+    print(fake)
+    print(f"\nGAN adversarial loss: {g_loss:.4f}")
+    print(f"LSTM anomaly forecast score: {forecast:.4f}")
+    print(f"NP-hard isolated outlier indices: {outliers}")
 
-        print("\nFake threat vector (GAN generated):")
-        print(fake)
-        print(f"\nGAN adversarial loss: {g_loss:.4f}")
-        print(f"LSTM anomaly forecast score: {forecast:.4f}")
-        print(f"NP-hard isolated outlier indices: {outliers}")
-    except Exception as e:
-        print(f"Error loading or analyzing file: {e}")
+def main():
+    ascii_header()
+
+    # DISCLAIMER LEGALE ALL'AVVIO (come richiesto)
+    print("*** AUTHORIZED USE ONLY – For educational/research/authorized pentest/lab only ***")
+    print("DO NOT use on unauthorized systems. Author not responsible for misuse.\n")
+
+    tool_explanation()
+    interactive_menu()
 
 def interactive_menu():
     while True:
@@ -139,10 +141,17 @@ def interactive_menu():
         else:
             print("Invalid command. Try '2' for help.")
 
-def main():
-    ascii_header()
-    tool_explanation()
-    interactive_menu()
+def analyze_log(logfile):
+    if not os.path.isfile(logfile):
+        print(f"Error: File '{logfile}' not found. Please provide a valid log file with numerical data (e.g. 10 columns).")
+        return
+
+    print(f"Analyzing log file: {logfile}")
+    try:
+        data = np.loadtxt(logfile)[:100, :10]  # Load first 100 rows, 10 columns
+        analyze_data(data)
+    except Exception as e:
+        print(f"Error loading or analyzing file: {e}")
 
 if __name__ == "__main__":
     main()
