@@ -28,7 +28,7 @@ Real-world use: anomaly detection in SOC environments, SIEM data monitoring, pro
 **DO NOT** use on unauthorized systems.
 
 ## One-Click Setup & Run
-
+```bash
 Clone the repository
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
 
