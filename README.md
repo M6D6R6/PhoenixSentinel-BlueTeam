@@ -1,4 +1,6 @@
-![PhoenixSentinel-BlueTeam](PhoenixSentinel-BlueTeam.jpg)
+<p align="center">
+  <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam Banner" width="500"/>
+</p>
  
  # PhoenixSentinel-BlueTeam
 
