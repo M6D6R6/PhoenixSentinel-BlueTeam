@@ -1,4 +1,4 @@
-
+import os
 from termcolor import colored
 import subprocess
 import sys
@@ -53,9 +53,9 @@ def main():
             subprocess.run(["python3", "test_lstm_anomaly.py"])
         elif choice == "5":
             print("\nAvvio live detection (richiede sudo)...")
-            print("Esegui manualmente: sudo PYTHONPATH=$HOME/.local/lib/python3.13/site-packages python3 detect_live.py")
-            print("Oppure usa il comando qui sotto se hai già configurato PYTHONPATH.")
-            subprocess.run(["sudo", "PYTHONPATH=$HOME/.local/lib/python3.13/site-packages", "python3", "detect_live.py"])
+            home_path = os.path.expanduser("~")
+            python_path = f"{home_path}/.local/lib/python3.13/site-packages"
+            subprocess.run(["sudo", "PYTHONPATH=" + python_path, "python3", "detect_live.py"])
         elif choice == "6":
             print("\nExiting PhoenixSentinel. Goodbye!")
             sys.exit(0)
