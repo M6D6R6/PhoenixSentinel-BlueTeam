@@ -70,13 +70,5 @@ It combines **Generative Adversarial Networks (GAN)** to simulate synthetic thre
 
 ---
 
-## Installation Commands
 
-**Step 1: Clone Repository**
-
-```bash
-
-git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
-
-cd PhoenixSentinel-BlueTeam
 
