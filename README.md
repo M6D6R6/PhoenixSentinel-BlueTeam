@@ -26,9 +26,9 @@ PhoenixSentinel-BlueTeam is an **AI-powered Intrusion Detection System (IDS) pro
 - **K-Means** - Outlier isolation
 - **Scapy** - Real-time packet analysis
 
-## 🚀 Installation (Copy-Paste Ready)
+## 🚀 Installation 
 
-### **Complete Setup - 6 Simple Steps:**
+### **Complete Setup**
 
 ```bash
 # 1. Clone repository
