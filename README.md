@@ -27,7 +27,7 @@ It analyzes log files (system logs, network traffic, SIEM exports) to:
 - **LSTM Forecasting**: Predict anomalies over time (anticipate threats)
 - **NetworkX Isolation**: Isolate suspicious activity via graph analysis (quarantine/containment)
 
-Real-world use: anomaly detection in SOC environments, SIEM data monitoring, proactive network defense.
+Anomaly detection in SOC environments, SIEM data monitoring, proactive network defense.
 
 
 
