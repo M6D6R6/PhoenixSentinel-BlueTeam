@@ -1,0 +1,25 @@
+dataset:
+  train_path: data/raw_logs/KDDTrain+.txt
+  sample_size: 8000   # piccolo per test rapidi
+
+gan:
+  latent_dim: 100
+  epochs: 50
+  batch_size: 64
+  lr: 0.0001
+  device: cpu   # cambia in "cuda" se hai GPU NVIDIA
+
+lstm:
+  hidden_dim: 64
+  epochs: 15
+  batch_size: 64
+  lr: 0.001
+
+detection:
+  anomaly_threshold: 0.4
+  interface: eth0   # cambia con il tuo (es. wlan0, enp0s3)
+
+models:
+  generator: models/gan_generator.pth
+  discriminator: models/gan_discriminator.pth
+  lstm: models/lstm_predictor.pth
