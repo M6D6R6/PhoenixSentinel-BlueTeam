@@ -17,119 +17,40 @@ The author is not responsible for any misuse or damage resulting from the use of
 [![Forks](https://img.shields.io/github/forks/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/network/members)
 [![MIT License](https://img.shields.io/github/license/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/blob/main/LICENSE)
 
-### Overview
+## Overview
 PhoenixSentinel-BlueTeam is an **AI-powered Intrusion Detection System (IDS) prototype** designed for Blue Team operations, Red Team simulation, and Digital Forensics lab scenarios.
 
-It combines **Generative Adversarial Networks (GAN)** to simulate synthetic threats, **LSTM** to forecast temporal attack patterns, **clustering** for outlier isolation, and **Scapy** for real-time packet analysis.
+**Core AI Technologies:**
+- **GAN** - Synthetic threat generation
+- **LSTM** - Temporal anomaly forecasting  
+- **K-Means** - Outlier isolation
+- **Scapy** - Real-time packet analysis
 
-**Goal**: Demonstrate how modern AI techniques can enhance threat detection and adversarial simulation in controlled environments.
+## 🚀 Installation (Copy-Paste Ready)
 
-### Features
-- **GAN threat generation**  
-  Trains on real log data (NSL-KDD features) to create realistic synthetic attack vectors  
-- **LSTM anomaly forecasting**  
-  Analyzes log event sequences to predict temporal anomalies  
-- **Clustering & isolation**  
-  Uses K-Means + graph-based scoring to highlight suspicious samples  
-- **Interactive console**  
-  `main.py` provides menu-driven interface for training, testing, and live detection  
-- **Live packet analysis (Scapy)**  
-  Real-time network sniffing with AI-based anomaly scoring  
+### **Complete Setup - 6 Simple Steps:**
 
-### Current Status
-- Research prototype – **not production-ready**  
-- Simplified models for educational focus  
-- CPU-optimized (basic GPU support)  
-- High false positives possible in live mode due to basic feature extraction  
-- Tested in lab environment (Kali + Metasploitable 2)
-
-### Installation
-
-**1. Clone the repository**
-
+```bash
+# 1. Clone repository
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
 cd PhoenixSentinel-BlueTeam
 
-**2. Setup virtual environment**
-
+# 2. Create virtual environment
 python3 -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-**3. Install dependencies**
-
+# 3. Install dependencies
 pip install -r requirements.txt
 
-**4. Download NSL-KDD dataset**
-
+# 4. Download dataset (Kaggle account required)
 mkdir -p data/raw_logs
 kaggle datasets download -d hassan06/nslkdd -p data/raw_logs
 cd data/raw_logs && unzip nslkdd.zip && cd ../..
 
-**5. Launch AI Blue Team Console**
-
+# 5. Launch console
 python main.py
 
-**6. Live packet analysis (sudo required)**
-
+# 6. Live analysis (sudo required)
 sudo python3 detect_live.py
 
-**ONE-LINER COMPLETE SETUP**
 
-git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git && cd PhoenixSentinel-BlueTeam && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && mkdir -p data/raw_logs && kaggle datasets download -d hassan06/nslkdd -p data/raw_logs && cd data/raw_logs && unzip nslkdd.zip && cd ../.. && python main.py
-
-**Configuration (config.yaml)**
-
-dataset:
-  train_path: data/raw_logs/KDDTrain+.txt
-  sample_size: 8000
-
-gan:
-  epochs: 50
-  device: cpu  # "cuda" for GPU
-
-lstm:
-  epochs: 15
-
-detection:
-  interface: eth0
-
-**Console Menu**
-
-1. Train GAN (addestra GAN su NSL-KDD)
-2. Train LSTM (forecasting anomalie)
-3. Test GAN anomaly detection
-4. Test LSTM reconstruction error
-5. Live packet detection (Scapy - richiede sudo)
-6. Exit
-
-**Repository Structure**
-
-├── main.py                 # Interactive console
-├── train_gan.py           # GAN training
-├── train_lstm.py          # LSTM training
-├── detect_live.py         # Live detection
-├── config.yaml            # Configuration
-├── requirements.txt       # Dependencies
-├── data/raw_logs/         # NSL-KDD dataset
-├── models/                # Trained models
-└── PhoenixSentinel-BlueTeam.jpg
-
-**Limitations & Roadmap**
-
-Current Limitations:
-
-Research prototype only
-
-CPU-focused (GPU support basic)
-
-No production monitoring
-
-Future Improvements:
-
-Docker containerization
-
-ELK Stack integration
-
-Web dashboard + Grafana
-
-Production metrics (ROC curves)
