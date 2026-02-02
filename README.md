@@ -18,16 +18,34 @@ The author is not responsible for any misuse or damage resulting from the use of
 [![Forks](https://img.shields.io/github/forks/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/network/members)
 [![MIT License](https://img.shields.io/github/license/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/blob/main/LICENSE)
 
-## What it is and what it does  
+## What it does
 
-PhoenixSentinel-BlueTeam is an **AI-powered Intrusion Detection System (IDS)** for the Blue Team (defense).  
+**AI-powered IDS** for Blue Team:
+- **GAN**: Generate realistic synthetic threats  
+- **LSTM**: Predict temporal attack patterns
+- **NetworkX**: Isolate suspicious packets
+- **Scapy**: Live packet analysis
 
-It analyzes log files (system logs, network traffic, SIEM exports) to:
-- **GAN Threat Generation**: Simulate adversarial threats (train/test defenses vs AI attacks)
-- **LSTM Forecasting**: Predict anomalies over time (anticipate threats)
-- **NetworkX Isolation**: Isolate suspicious activity via graph analysis (quarantine/containment)
+## Step-by-Step Commands 
 
-Anomaly detection in SOC environments, SIEM data monitoring, proactive network defense.
+**Step 1: Clone repository**  
+`git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git`
 
+**Step 2: Enter directory**  
+`cd PhoenixSentinel-BlueTeam`
 
+**Step 3: Download NSL-KDD dataset**  
+`kaggle datasets download -d hassan06/nslkdd`
+
+**Step 4: Extract dataset**  
+`unzip nslkdd.zip -d data/raw_logs/`
+
+**Step 5: Install dependencies**  
+`pip install torch==2.1.0+cu121 torchvision torchaudio networkx scapy pandas numpy scikit-learn matplotlib seaborn`
+
+**Step 6: Train GAN models (48h GPU)**  
+`python train_gan.py --epochs 100 --cuda --batch_size 64`
+
+**Step 7: Run live IDS**  
+`python ids_main.py --live --model-dir models/`
 
