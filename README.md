@@ -55,6 +55,8 @@ The author is not responsible for any misuse or damage resulting from the use of
 - Change threshold in config.yaml for fewer false positives.
 
 **Note**: Live detection richiede sudo per Scapy e interfaccia corretta in config.yaml (es. eth0, wlan0).
-**Note**: The tool is a prototype/proof-of-concept (PoC).
+
+**Note**: The tool is operational in a lab environment (training on NSL-KDD, live detection with Scapy).
+
 ## License
 MIT License – see LICENSE file
