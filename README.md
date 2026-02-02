@@ -1,9 +1,8 @@
-
 **DISCLAIMER – LEGAL NOTICE**
 <span style="color:red; font-weight:bold; border: 2px solid red; padding: 12px; display: block; text-align: center; margin: 10px 0;">
-This tool is a proof-of-concept for **educational and authorized research purposes only**.
-It is designed for use in controlled lab environments or with **explicit written permission (RoE)** during authorized penetration testing.
-**DO NOT** use this tool on any system or network without proper authorization.
+This tool is a proof-of-concept for <b>educational and authorized research purposes only</b>.<br>
+It is designed for use in controlled lab environments or with <b>explicit written permission (Rules of Engagement)</b> during authorized penetration testing.<br>
+<b>DO NOT</b> use this tool on any system, network, or data without proper authorization.<br>
 The author is not responsible for any misuse or damage resulting from the use of this tool.
 </span>
 
@@ -12,51 +11,118 @@ The author is not responsible for any misuse or damage resulting from the use of
 </p>
 
 # PhoenixSentinel-BlueTeam
-**AI Blue Team IDS** – GAN threats, **LSTM** forecast, **NetworkX** packet isolation
+
+**AI Blue Team IDS** – GAN threat generation, LSTM anomaly forecasting, clustering-based isolation, and live packet analysis.
 
 [![Stars](https://img.shields.io/github/stars/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/stargazers/)
 [![Forks](https://img.shields.io/github/forks/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/network/members)
 [![MIT License](https://img.shields.io/github/license/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/blob/main/LICENSE)
 
-## What it does
-**AI-powered IDS** for Blue Team:
-- **GAN**: Generate realistic synthetic threats
-- **LSTM**: Predict temporal attack patterns
-- **NetworkX**: Isolate suspicious packets
-- **Scapy**: Live packet analysis
+---
 
-## Step-by-Step Commands
-**Step 1: Clone repository**
-`git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git`
+## Overview
 
-**Step 2: Enter directory**
-`cd PhoenixSentinel-BlueTeam`
+PhoenixSentinel-BlueTeam is an AI-powered Intrusion Detection System (IDS) **prototype** designed for Blue Team, Red Team simulation, and Digital Forensics lab scenarios.  
+The project combines **Generative Adversarial Networks (GAN)**, **LSTM-based time series models**, and **clustering/outlier detection** to analyze logs and (optionally) live network traffic.
 
-**Step 3: Download NSL-KDD dataset**
-`kaggle datasets download -d hassan06/nslkdd`
+**Goal:** Realistic proof-of-concept showing modern AI techniques for threat detection and adversarial simulations in controlled environments.
 
-**Step 4: Extract dataset**
-`unzip nslkdd.zip -d data/raw_logs/`
+---
 
-**Step 5: Install dependencies**
-`pip install torch==2.1.0+cu121 torchvision torchaudio networkx scapy pandas numpy scikit-learn matplotlib seaborn`
+## Features
 
-**Step 6: Train GAN models (48h GPU)**
-`python train_gan.py --epochs 100 --cuda --batch_size 64`
+- **GAN (Generative Adversarial Network)**  
+  - Trains on real log data (NSL-KDD features).  
+  - Generates synthetic "threat vectors" for advanced/adversarial attacks.  
+  - Training via `train_gan.py`, models saved in `models/`.
 
-**Step 7: Run live IDS**
-`python ids_main.py --live --model-dir models/`
+- **LSTM anomaly forecasting**  
+  - Processes log event sequences, outputs anomaly scores.  
+  - Detects temporal patterns (scans, bursts, slow attacks).  
+  - Training via `train_lstm.py` / `train_Istm.py`.
 
-## Live Detection (Scapy)
-`sudo PYTHONPATH=$HOME/.local/lib/python3.13/site-packages python3 detect_live.py`
+- **Clustering & outlier isolation**  
+  - K-Means clustering + graph-based scoring.  
+  - Highlights most suspicious samples for analysts.
 
-- Generates traffic (ping flood, nmap scan on 192.168.50.101) to test alerts.
-- Low score (< 0.4) → anomaly.
-- Change threshold in config.yaml for fewer false positives.
+- **Interactive AI Blue Team console**  
+  - `main.py` provides menu-driven interface.  
+  - Train → Test → Live detection in one interface.  
+  - Perfect for lab demos and interviews.
 
-**Note**: Live detection richiede sudo per Scapy e interfaccia corretta in config.yaml (es. eth0, wlan0).
+- **Live detection (Scapy)**  
+  - Real-time packet capture and AI analysis.  
+  - **Lab networks + sudo privileges required**.
 
-**Note**: The tool is a proof of concept (PoC) to explore the use of AI (GAN + LSTM) in an IDS Blue Team, the tool is operational in a lab environment (training on NSL-KDD, live detection with Scapy).
+---
 
-## License
-MIT License – see LICENSE file
+## Repository Structure
+
+---
+
+## Installation
+
+**Recommended: Python virtual environment**
+
+# 1. Clone the repository
+'git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git'
+cd PhoenixSentinel-BlueTeam
+
+# 2. Create virtual environment
+python3 -m venv .venv
+source .venv/bin/activate    # Windows: .venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# Create data directory
+mkdir -p data/raw_logs
+
+# Download NSL-KDD (Kaggle CLI - requires kaggle account)
+kaggle datasets download -d hassan06/nslkdd -p data/raw_logs
+cd data/raw_logs && unzip nslkdd.zip && cd ../..
+
+dataset:
+  train_path: data/raw_logs/KDDTrain+.txt
+  sample_size: 8000   # Small sample for quick testing
+
+gan:
+  latent_dim: 100
+  epochs: 50
+  batch_size: 64
+  lr: 0.0001
+  device: cpu         # Change to "cuda" for GPU
+
+lstm:
+  hidden_dim: 64
+  epochs: 15
+  batch_size: 64
+  lr: 0.001
+
+detection:
+  anomaly_threshold: 0.4
+  interface: eth0     # Change to your network interface
+
+models:
+  generator: models/gan_generator.pth
+  discriminator: models/gan_discriminator.pth
+  lstm: models/lstm_predictor.pth
+
+python main.py
+
+sudo python3 detect_live.py
+
+Limitations & Roadmap
+Current Limitations
+•	Research prototype - not production-ready
+•	Simplified GAN/LSTM architectures for educational focus
+•	CPU-optimized (basic GPU support)
+•	No automated testing or production monitoring
+Planned Improvements
+•	Web dashboard with real-time alerts and visualizations
+•	Integration with ELK Stack, Splunk
+•	Production metrics (ROC curves, precision-recall)
+•	Advanced feature engineering from SIEM logs
+•	Containerization (Docker)
+
+
