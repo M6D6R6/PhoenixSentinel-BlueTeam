@@ -1,59 +1,28 @@
-**DISCLAIMER – LEGAL NOTICE**
-<span style="color:red; font-weight:bold; border: 2px solid red; padding: 12px; display: block; text-align: center; margin: 10px 0;">
-This tool is a proof-of-concept for <b>educational and authorized research purposes only</b>.<br>
-It is designed for use in controlled lab environments or with <b>explicit written permission (Rules of Engagement)</b> during authorized penetration testing.<br>
-<b>DO NOT</b> use this tool on any system, network, or data without proper authorization.<br>
-The author is not responsible for any misuse or damage resulting from the use of this tool.
-</span>
+**🚨 DISCLAIMER LEGALE 🚨**
+<div style="color:#d32f2f; font-weight:900; border:5px solid #d32f2f; padding:25px; background:linear-gradient(145deg,#ffebee,#ffcdd2); text-align:center; border-radius:15px; margin:25px 0; box-shadow:0 8px 32px rgba(211,47,47,0.3); font-size:16px;">
+<b>✅ USO AUTORIZZATO:</b> Laboratori educativi • Pentest autorizzati (RoE firmati) • Ambienti di ricerca<br>
+❌ <b>VIETATO:</b> Sistemi di produzione • Reti non autorizzate • Infrastrutture critiche<br>
+<i>L'autore M6D6R6 non si assume responsabilità. Richiede autorizzazione scritta.</i>
+</div>
 
 <p align="center">
-  <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam Banner" width="500"/>
+  <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam" width="700"/>
+  <br><sup>🛡️ Sistema IDS con Intelligenza Artificiale | Blue/Red Team • Forensics Digitali</sup>
 </p>
 
-# PhoenixSentinel-BlueTeam
+# 🔥 PhoenixSentinel-BlueTeam
 
-**AI Blue Team IDS** – GAN threat generation, LSTM anomaly forecasting, clustering-based isolation, and live packet analysis.
+**IDS con AI** – **GAN per minacce** • **LSTM per anomalie** • **Clustering** • **Analisi pacchetti live**
 
-[![Stars](https://img.shields.io/github/stars/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/stargazers/)
-[![Forks](https://img.shields.io/github/forks/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/network/members)
-[![MIT License](https://img.shields.io/github/license/M6D6R6/PhoenixSentinel-BlueTeam)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/blob/main/LICENSE)
-
----
-
-## Overview
-
-PhoenixSentinel-BlueTeam is an AI-powered Intrusion Detection System (IDS) **prototype** designed for Blue Team, Red Team simulation, and Digital Forensics lab scenarios.  
-The project combines **Generative Adversarial Networks (GAN)**, **LSTM-based time series models**, and **clustering/outlier detection** to analyze logs and (optionally) live network traffic.
-
-**Goal:** Realistic proof-of-concept showing modern AI techniques for threat detection and adversarial simulations in controlled environments.
+[![Stars](https://img.shields.io/github/stars/M6D6R6/PhoenixSentinel-BlueTeam?color=gold&label=⭐&style=for-the-badge)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/stargazers/)
+[![Forks](https://img.shields.io/github/forks/M6D6R6/PhoenixSentinel-BlueTeam?color=orange&style=for-the-badge)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/network)
+[![Licenza](https://img.shields.io/github/license/M6D6R6/PhoenixSentinel-BlueTeam?color=blue&style=for-the-badge)](https://github.com/M6D6R6/PhoenixSentinel-BlueTeam/blob/main/LICENSE)
 
 ---
 
-## Features
+## 🎯 Funzionalità Principali
 
-- **GAN (Generative Adversarial Network)**  
-  - Trains on real log data (NSL-KDD features).  
-  - Generates synthetic "threat vectors" for advanced/adversarial attacks.  
-  - Training via `train_gan.py`, models saved in `models/`.
+### 🚀 **GAN - Generazione Minacce**
+```bash
+python3 train_gan.py
 
-- **LSTM anomaly forecasting**  
-  - Processes log event sequences, outputs anomaly scores.  
-  - Detects temporal patterns (scans, bursts, slow attacks).  
-  - Training via `train_lstm.py` / `train_Istm.py`.
-
-- **Clustering & outlier isolation**  
-  - K-Means clustering + graph-based scoring.  
-  - Highlights most suspicious samples for analysts.
-
-- **Interactive AI Blue Team console**  
-  - `main.py` provides menu-driven interface.  
-  - Train → Test → Live detection in one interface.  
-  - Perfect for lab demos and interviews.
-
-- **Live detection (Scapy)**  
-  - Real-time packet capture and AI analysis.  
-  - **Lab networks + sudo privileges required**.
-
----
-
-## Repository Structure
