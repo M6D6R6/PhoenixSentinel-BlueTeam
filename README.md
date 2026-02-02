@@ -30,7 +30,7 @@ PhoenixSentinel-BlueTeam is an **AI-powered Intrusion Detection System (IDS) pro
 
 ### **Complete Setup**
 
-```bash
+``bash
 # 1. Clone repository
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
 cd PhoenixSentinel-BlueTeam
@@ -53,4 +53,5 @@ python main.py
 # 6. Live analysis (sudo required)
 sudo python3 detect_live.py
 
+### **ONE-LINER**
 
