@@ -39,8 +39,7 @@ It combines **Generative Adversarial Networks (GAN)** to simulate synthetic thre
 ### Current Status
 - Research prototype – **not production-ready**  
 - Simplified models for educational focus  
-- CPU-optimized (basic GPU support)  
-- High false positives possible in live mode due to basic feature extraction  
+- CPU-optimized (basic GPU support)   
 - Tested in lab environment (Kali + Metasploitable 2)
 
 ---
