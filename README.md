@@ -46,6 +46,90 @@ It combines **Generative Adversarial Networks (GAN)** to simulate synthetic thre
 ### Installation
 
 **1. Clone the repository**
-```bash
+
 git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git
 cd PhoenixSentinel-BlueTeam
+
+**2. Setup virtual environment**
+
+python3 -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+**3. Install dependencies**
+
+pip install -r requirements.txt
+
+**4. Download NSL-KDD dataset**
+
+mkdir -p data/raw_logs
+kaggle datasets download -d hassan06/nslkdd -p data/raw_logs
+cd data/raw_logs && unzip nslkdd.zip && cd ../..
+
+**5. Launch AI Blue Team Console**
+
+python main.py
+
+**6. Live packet analysis (sudo required)**
+
+sudo python3 detect_live.py
+
+**ONE-LINER COMPLETE SETUP**
+
+git clone https://github.com/M6D6R6/PhoenixSentinel-BlueTeam.git && cd PhoenixSentinel-BlueTeam && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && mkdir -p data/raw_logs && kaggle datasets download -d hassan06/nslkdd -p data/raw_logs && cd data/raw_logs && unzip nslkdd.zip && cd ../.. && python main.py
+
+**Configuration (config.yaml)**
+
+dataset:
+  train_path: data/raw_logs/KDDTrain+.txt
+  sample_size: 8000
+
+gan:
+  epochs: 50
+  device: cpu  # "cuda" for GPU
+
+lstm:
+  epochs: 15
+
+detection:
+  interface: eth0
+
+**Console Menu**
+
+1. Train GAN (addestra GAN su NSL-KDD)
+2. Train LSTM (forecasting anomalie)
+3. Test GAN anomaly detection
+4. Test LSTM reconstruction error
+5. Live packet detection (Scapy - richiede sudo)
+6. Exit
+
+**Repository Structure**
+
+├── main.py                 # Interactive console
+├── train_gan.py           # GAN training
+├── train_lstm.py          # LSTM training
+├── detect_live.py         # Live detection
+├── config.yaml            # Configuration
+├── requirements.txt       # Dependencies
+├── data/raw_logs/         # NSL-KDD dataset
+├── models/                # Trained models
+└── PhoenixSentinel-BlueTeam.jpg
+
+**Limitations & Roadmap**
+
+Current Limitations:
+
+Research prototype only
+
+CPU-focused (GPU support basic)
+
+No production monitoring
+
+Future Improvements:
+
+Docker containerization
+
+ELK Stack integration
+
+Web dashboard + Grafana
+
+Production metrics (ROC curves)
