@@ -14,7 +14,7 @@ The author is not responsible for any misuse or damage resulting from the use of
 
 <p align="center">
 
-  <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam Banner" width="500"/>
+  <img src="PhoenixSentinel-BlueTeam.jpg" alt="PhoenixSentinel-BlueTeam Banner" width="370"/>
 
 </p>
 
