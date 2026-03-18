@@ -64,6 +64,11 @@ The system has been validated in isolated lab environments using **Metasploitabl
 ---
 
 ## ⚖️ Legal & Ethical Disclaimer
+
+<p align="center">
+  <strong>This software is proprietary. See the <a href="LICENSE">LICENSE</a> file for the full EULA and Legal Disclaimer.</strong>
+</p>
+
 PhoenixSentinel-BlueTeam is strictly for authorized research and educational purposes. The author assumes no liability for misuse. All testing must be conducted within a pre-approved scope and with explicit written authorization (Rules of Engagement).
 
 ---
